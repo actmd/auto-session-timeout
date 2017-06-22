@@ -10,7 +10,7 @@ function PeriodicalQuery() {
     var status = event.target.status;
     var response = event.target.response;
     if (status === 200 && (response === false || response === 'false')) {
-      window.location.href = '/timeout';
+      window.location.href = '/timeout?return_url=' + encodeURI(window.location.href);
     }
   };
   request.open('GET', '/active', true);
